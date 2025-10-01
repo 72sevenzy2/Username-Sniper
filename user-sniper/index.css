@@ -1,0 +1,172 @@
+html body {
+    background: rgb(19, 18, 18);
+    display: flex;
+    /* use flexbox */
+    justify-content: center;
+    /* align to left */
+    align-items: flex-start;
+    /* align to bottom */
+    min-height: 100vh;
+    /* full screen height */
+    padding: 5rem;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: hsl(0, 0%, 62%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper1 {
+    border: 2px solid rgb(58, 56, 56);
+    background: rgb(48, 48, 48);
+    width: 700px;
+    font-family: "PT Serif", serif;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    left: -0.7vw;
+    /* Safari support */
+    border-radius: 12px;
+    /* optional */
+    padding: 1rem;
+    flex-wrap: wrap;
+    z-index: 9999;
+
+    flex-wrap: wrap;
+}
+
+.wr1h1 {
+    cursor: default;
+}
+
+.wr1content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.wr1input {
+    text-align: center;
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
+    border-start-end-radius: 15px;
+    border-start-start-radius: 15px;
+    background: rgb(216, 216, 216);
+    border: none;
+    margin-left: 50px;
+}
+
+
+
+.wr1button {
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: grey;
+    font-weight: bold;
+    color: rgb(216, 216, 216);
+    width: 100px;
+}
+
+.wr1label {
+    margin-right: 50px;
+}
+
+.wrapper2 {
+    border: 2px solid rgb(58, 56, 56);
+    background: rgb(48, 48, 48);
+    width: 700px;
+    font-family: "PT Serif", serif;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border-radius: 12px;
+    /* optional */
+    padding: 1rem;
+    flex-wrap: wrap;
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+}
+
+.wr2content {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.wr2button1 {
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background: grey;
+    color: rgb(216, 216, 216);
+    font: bold;
+}
+
+.wr2input {
+    text-align: center;
+    border: none;
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
+    border-start-end-radius: 15px;
+    border-start-start-radius: 15px;
+    height: 20px;
+    text-align: center;
+    background: rgb(216, 216, 216);
+}
+
+.wr2button2 {
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+}
+
+.wr2label {
+    margin-left: 70px;
+}
+
+.wrapper3 {
+    border: 2px solid rgb(58, 56, 56);
+    background: rgb(48, 48, 48);
+    width: 700px;
+    font-family: "PT Serif", serif;
+    font-weight: bold;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border-radius: 12px;
+    /* optional */
+    padding: 1rem;
+    flex-wrap: wrap;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wr3content {
+}
