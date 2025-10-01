@@ -99,7 +99,6 @@ html body {
     z-index: 9999;
     display: flex;
     justify-content: flex-start;
-
     flex-wrap: wrap;
 }
 
@@ -168,5 +167,25 @@ html body {
     flex-wrap: wrap;
 }
 
+.wr3content2 {
+    border: 1px solid red;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-top: 1vh;
+    /* Responsive vertical spacing */
+}
+
 .wr3content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 9vh;
+    flex-wrap: wrap;
+    /* Responsive vertical spacing */
+}
+
+.wr3h1 {
+    height: fit-content;
 }
