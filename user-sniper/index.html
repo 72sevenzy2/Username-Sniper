@@ -17,6 +17,44 @@
 
 <body>
   <script type="module" src="animation.js"></script>
+  <script>
+    (function () {
+      let scrollTarget = window.scrollY;
+      let isScrolling = false;
+
+      // Listen to user scroll
+      window.addEventListener("wheel", e => {
+        e.preventDefault(); // stop the default jumpy scroll
+
+        // adjust scroll target
+        scrollTarget += e.deltaY;
+
+        // clamp to page bounds
+        scrollTarget = Math.max(0, Math.min(scrollTarget, document.body.scrollHeight - window.innerHeight));
+
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(smoothStep);
+        }
+      }, { passive: false });
+
+      function smoothStep() {
+        const current = window.scrollY;
+        const distance = scrollTarget - current;
+
+        // ease toward target
+        const step = distance * 0.1; // smaller factor = slower scrolling
+        if (Math.abs(distance) > 0.5) {
+          window.scrollTo(0, current + step);
+          requestAnimationFrame(smoothStep);
+        } else {
+          window.scrollTo(0, scrollTarget);
+          isScrolling = false;
+        }
+      }
+    })();
+  </script>
+
   <div id="animation1"></div>
 
   <div class="wrapper1">
@@ -104,7 +142,16 @@
   </div>
 
   <div class="wrapper5">
-    <h1 class="wr5h1">Log / Activity</h1>
+    <div class="wr5content">
+      <h1 class="wr5h1">Recent Log / Activity</h1>
+      <div class="wr5mainc">
+        <p class="wr5p">Checked: 0000 > Taken</p>
+        <p class="wr5p">Checked: 0000 > Taken</p>
+        <p class="wr5p">Checked: 0000 > Taken</p>
+        <p class="wr5p">Checked: 0000 > Taken</p>
+        <p class="wr5p">Checked: 0000 > Taken</p>
+      </div>
+    </div>
   </div>
 
 </body>
