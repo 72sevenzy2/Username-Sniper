@@ -11,9 +11,8 @@
   <link rel="stylesheet" href="index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=SUSE+Mono:ital,wght@0,800;1,800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,
+    400;1,700&family=SUSE+Mono:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -40,14 +39,72 @@
   </div>
 
   <div class="wrapper3">
-    <h1 class="wr3h1">Auto Sniper ></h1>
+    <h1 class="wr3h1">Auto Sniper</h1>
     <div class="wr3content">
       <div class="wr3content2">
-        <p>Preferred Length ></p>
-        <input type="radio"> 4 Character Set
-        <input type="radio"> 5 Character Set
+        <p>Preferred Length:</p>
+        <input type="radio" name="72"> 4 Character Set
+        <input type="radio" name="72"> 5 Character Set
+      </div>
+      <div class="wr3content3">
+        <p class="wr3p">Charset:</p>
+        <button class="wr3button1">Numbers only</button>
+        <button class="wr3button2">Numbers and Letters</button>
+        <button class="wr3button3">Letters only</button>
+        <h2 class="wr3h3">Status: Running Sniper...</h1>
+      </div>
+      <div class="wr3content4">
+        <button class="wr3button4">Start Sniper</button>
+        <button class="wr3button5">Stop</button>
       </div>
     </div>
+  </div>
+
+  <div class="wrapper4">
+    <div class="wr4content1">
+      <h1 class="wr4h1">Recent Finds</h1>
+      <div class="wr4innercontent">
+        <div class="help">
+          <p class="wr4c1p1">Template</p>
+          <button class="wr4c1button" id="buttonclass">copy</button>
+        </div>
+        <div class="help">
+          <p class="wr4c1p2">Template</p>
+          <button class="wr4c1button2" id="buttonclass2">copy</button>
+        </div>
+        <div class="help">
+          <p class="wr4c1p3">Template</p>
+          <button class="wr4c1button3" id="buttonclass3">copy</button>
+        </div>
+        <script>
+          const btn1 = document.getElementById("buttonclass");
+          const btn2 = document.getElementById("buttonclass2");
+          const btn3 = document.getElementById("buttonclass3");
+          const p = document.querySelector(".wr4c1p1").innerText;
+          const p2 = document.querySelector(".wr4c1p2").innerText;
+          const p3 = document.querySelector(".wr4c1p3").innerText;
+          btn1.addEventListener("click", () => {
+            navigator.clipboard.writeText(p).then(() => {
+              window.alert(`copied ${p}`);
+            });
+          });
+          btn2.addEventListener("click", () => {
+            navigator.clipboard.writeText(p2).then(() => {
+              window.alert(`copied ${p2}`);
+            });
+          });
+          btn3.addEventListener("click", () => {
+            navigator.clipboard.writeText(p3).then(() => {
+              window.alert(`copied ${p3}`);
+            });
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper5">
+    <h1 class="wr5h1">Log / Activity</h1>
   </div>
 
 </body>

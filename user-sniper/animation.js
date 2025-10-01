@@ -12,6 +12,6 @@ class Neutrons {
 }
 
 let portals = [];
-for (j = 0; j < 2; j++) {
+for (let j = 0; j < 2; j++) {
     const speed = Math.random() * 10;
 }

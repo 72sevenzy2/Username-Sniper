@@ -62,6 +62,7 @@ html body {
     background: rgb(216, 216, 216);
     border: none;
     margin-left: 50px;
+    cursor: default;
 }
 
 
@@ -128,6 +129,7 @@ html body {
     border-start-end-radius: 15px;
     border-start-start-radius: 15px;
     height: 20px;
+    cursor: default;
     text-align: center;
     background: rgb(216, 216, 216);
 }
@@ -168,24 +170,182 @@ html body {
 }
 
 .wr3content2 {
-    border: 1px solid red;
     flex-wrap: wrap;
     display: flex;
     gap: 4px;
     align-items: center;
     margin-top: 1vh;
     /* Responsive vertical spacing */
+    cursor: default;
 }
 
 .wr3content {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 9vh;
+    margin-top: 2vh;
     flex-wrap: wrap;
     /* Responsive vertical spacing */
 }
 
 .wr3h1 {
     height: fit-content;
+    cursor: default;
+}
+
+.wr3content3 {
+    margin-top: 3vh;
+}
+
+.wr3button1,
+.wr3button2,
+.wr3button3 {
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+    margin-top: 2vh;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+    padding: 0.4rem;
+}
+
+.wr3content4 {
+    padding-top: 3vh;
+    padding-left: 7vw;
+
+}
+
+.wr3button5 {
+    margin-left: 0.1vw;
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+    margin-top: 2vh;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+    padding: 0.4rem;
+}
+
+.wr3button4 {
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+    margin-top: 2vh;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+    padding: 0.4rem;
+}
+
+.wr3p {
+    cursor: default;
+}
+
+.wr3h3 {
+    margin-top: 3vh;
+    margin-right: 4.8vw;
+}
+
+.wrapper4 {
+    border: 2px solid rgb(58, 56, 56);
+    background: rgb(48, 48, 48);
+    width: 700px;
+    font-family: "PT Serif", serif;
+    font-weight: bold;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border-radius: 12px;
+    /* optional */
+    padding: 1rem;
+    flex-wrap: wrap;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wr4innercontent {
+    margin-top: 4vh;
+    display: flex;
+    padding: 0;
+}
+
+.help {
+    margin-left: 2vw;
+    width: 14vw;
+}
+
+.wr4c1button {
+    margin-left: 0.1vw;
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+    padding: 0.4rem 2vw;
+}
+
+.wr4c1button2 {
+    margin-left: 0.1vw;
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+    padding: 0.4rem 2vw;
+}
+
+.wr4c1button3 {
+    margin-left: 0.1vw;
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+    background: grey;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    font: bold;
+    padding: 0.4rem 2vw;
+}
+
+.wr4c1p1,
+.wr4c1p2,
+.wr4c1p3 {
+    cursor: default;
+}
+
+.wr4h1 {
+    cursor: default;
+}
+
+.wrapper5 {
+    border: 2px solid rgb(58, 56, 56);
+    background: rgb(48, 48, 48);
+    width: 700px;
+    font-family: "PT Serif", serif;
+    font-weight: bold;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border-radius: 12px;
+    /* optional */
+    padding: 1rem;
+    flex-wrap: wrap;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
