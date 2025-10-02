@@ -16,8 +16,6 @@ if (typeof fetch === 'function') {
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 async function checkRobloxUsername(username) {
     const url = 'https://users.roblox.com/v1/usernames/users';
     const body = JSON.stringify({

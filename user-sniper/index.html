@@ -17,6 +17,7 @@
 
 <body>
   <script type="module" src="animation.js"></script>
+  <script type="module" src="server.js"></script>
   <script>
     (function () {
       let scrollTarget = window.scrollY;
@@ -60,22 +61,24 @@
     <div class="blurOverlay"></div>
   </div>
 
+  <!--divs for the animation ^^-->
+
   <div class="wrapper1">
     <h1 class="wr1h1">Pain's Roblox Username Sniper</h1>
     <br>
     <div class="wr1content">
-      <input type="text" placeholder="Enter Username" class="wr1input">
-      <button class="wr1button">Check</button>
-      <label class="wr1label">Status: Taken</label>
+      <input type="text" placeholder="Enter Username" class="wr1input" id="wr1input">
+      <button class="wr1button" id="wr1button">Check</button>
+      <label class="wr1label" id="wr1label">Status: Taken</label>
     </div>
   </div>
 
   <div class="wrapper2">
     <div class="wr2content">
-      <input type="text" placeholder="Enter Username" class="wr2input">
-      <button class="wr2button1">Observe</button>
-      <button class="wr2button2">Stop</button>
-      <label class="wr2label">Status: Available!</label>
+      <input type="text" placeholder="Enter Username" class="wr2input" id="wr2input">
+      <button class="wr2button1" id="wr2button">Observe</button>
+      <button class="wr2button2" id="wr2button2">Stop</button>
+      <label class="wr2label" id="wr2label">Status: Available!</label>
     </div>
   </div>
 
@@ -84,19 +87,19 @@
     <div class="wr3content">
       <div class="wr3content2">
         <p>Preferred Length:</p>
-        <input type="radio" name="72"> 4 Character Set
-        <input type="radio" name="72"> 5 Character Set
+        <input type="radio" name="72" id="wr3radio1"> 4 Character Set
+        <input type="radio" name="72" id="wr3radio2"> 5 Character Set
       </div>
       <div class="wr3content3">
         <p class="wr3p">Charset:</p>
-        <button class="wr3button1">Numbers only</button>
-        <button class="wr3button2">Numbers and Letters</button>
-        <button class="wr3button3">Letters only</button>
-        <h2 class="wr3h3">Status: Running Sniper...</h1>
+        <button class="wr3button1" id="wr3button1">Numbers only</button>
+        <button class="wr3button2" id="wr3button2">Numbers and Letters</button>
+        <button class="wr3button3" id="wr3button3">Letters only</button>
+        <h2 class="wr3h3" id="wr3h3">Status: Running Sniper...</h1>
       </div>
       <div class="wr3content4">
-        <button class="wr3button4">Start Sniper</button>
-        <button class="wr3button5">Stop</button>
+        <button class="wr3button4" id="wr3button4">Start Sniper</button>
+        <button class="wr3button5" id="wr3button5">Stop</button>
       </div>
     </div>
   </div>
@@ -106,15 +109,15 @@
       <h1 class="wr4h1">Recent Finds</h1>
       <div class="wr4innercontent">
         <div class="help">
-          <p class="wr4c1p1">Template</p>
+          <p class="wr4c1p1" id="wr4c1p1">Template</p>
           <button class="wr4c1button" id="buttonclass">copy</button>
         </div>
         <div class="help">
-          <p class="wr4c1p2">Template</p>
+          <p class="wr4c1p2" id="wr4c1p2">Template</p>
           <button class="wr4c1button2" id="buttonclass2">copy</button>
         </div>
         <div class="help">
-          <p class="wr4c1p3">Template</p>
+          <p class="wr4c1p3" id="wr4c1p3">Template</p>
           <button class="wr4c1button3" id="buttonclass3">copy</button>
         </div>
         <script>
@@ -148,11 +151,11 @@
     <div class="wr5content">
       <h1 class="wr5h1">Recent Log / Activity</h1>
       <div class="wr5mainc">
-        <p class="wr5p">Checked: 0000 > Taken</p>
-        <p class="wr5p">Checked: 0000 > Taken</p>
-        <p class="wr5p">Checked: 0000 > Taken</p>
-        <p class="wr5p">Checked: 0000 > Taken</p>
-        <p class="wr5p">Checked: 0000 > Taken</p>
+        <p class="wr5p" id="wr5p1">Checked: 0000 > Taken</p>
+        <p class="wr5p" id="wr5p2">Checked: 0000 > Taken</p>
+        <p class="wr5p" id="wr5p3">Checked: 0000 > Taken</p>
+        <p class="wr5p" id="wr5p4">Checked: 0000 > Taken</p>
+        <p class="wr5p" id="wr5p5">Checked: 0000 > Taken</p>
       </div>
     </div>
   </div>
