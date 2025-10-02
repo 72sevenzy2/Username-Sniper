@@ -1,363 +1,396 @@
-html {
-    scroll-behavior: smooth;
-}
+    html {
+        scroll-behavior: smooth;
+    }
 
-html body {
-    background: rgb(19, 18, 18);
-    display: flex;
-    /* use flexbox */
-    justify-content: center;
-    /* align to left */
-    align-items: flex-start;
-    /* align to bottom */
-    min-height: 100vh;
-    /* full screen height */
-    padding: 5rem;
-    gap: 20px;
-    flex-wrap: wrap;
-    color: hsl(0, 0%, 62%);
-}
+    html body {
+        background: rgb(19, 18, 18);
+        backdrop-filter: blur(20px);
+        /* blur background behind */
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        /* use flexbox */
+        justify-content: center;
+        /* align to left */
+        align-items: flex-start;
+        /* align to bottom */
+        min-height: 100vh;
+        height: 100%;
+        /* full screen height */
+        padding: 5rem;
+        gap: 20px;
+        flex-wrap: wrap;
+        color: hsl(0, 0%, 62%);
+    }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-    width: 0.1px;
-}
-
-.wrapper1 {
-    border: 2px solid rgb(58, 56, 56);
-    background: rgb(48, 48, 48);
-    width: 700px;
-    font-family: "PT Serif", serif;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    /* blur background behind */
-    -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    left: -0.7vw;
-    /* Safari support */
-    border-radius: 12px;
-    /* optional */
-    padding: 1rem;
-    flex-wrap: wrap;
-    z-index: 9999;
-
-    flex-wrap: wrap;
-}
-
-.wr1h1 {
-    cursor: default;
-}
-
-.wr1content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-}
-
-.wr1input {
-    text-align: center;
-    border-end-end-radius: 20px;
-    border-end-start-radius: 20px;
-    border-start-end-radius: 15px;
-    border-start-start-radius: 15px;
-    background: rgb(216, 216, 216);
-    border: none;
-    margin-left: 50px;
-    cursor: default;
-}
+    #animationContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
 
 
+    #particleCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+    }
 
-.wr1button {
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background: grey;
-    font-weight: bold;
-    color: rgb(216, 216, 216);
-    width: 100px;
-}
+    .blurOverlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(10px);
 
-.wr1label {
-    margin-right: 50px;
-}
+    }
 
-.wrapper2 {
-    border: 2px solid rgb(58, 56, 56);
-    background: rgb(48, 48, 48);
-    width: 700px;
-    font-family: "PT Serif", serif;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    /* blur background behind */
-    -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
-    border-radius: 12px;
-    /* optional */
-    padding: 1rem;
-    flex-wrap: wrap;
-    z-index: 9999;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-.wr2content {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-}
+    ::-webkit-scrollbar {
+        width: 0.1px;
+    }
 
-.wr2button1 {
-    width: 100px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    background: grey;
-    color: rgb(216, 216, 216);
-    font: bold;
-}
+    .wrapper1 {
+        border: 2px solid rgb(58, 56, 56);
+        background: rgb(48, 48, 48);
+        width: 700px;
+        font-family: "PT Serif", serif;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        /* blur background behind */
+        -webkit-backdrop-filter: blur(10px);
+        position: relative;
+        left: -0.7vw;
+        /* Safari support */
+        border-radius: 12px;
+        /* optional */
+        padding: 1rem;
+        flex-wrap: wrap;
+        z-index: 9999;
 
-.wr2input {
-    text-align: center;
-    border: none;
-    border-end-end-radius: 20px;
-    border-end-start-radius: 20px;
-    border-start-end-radius: 15px;
-    border-start-start-radius: 15px;
-    height: 20px;
-    cursor: default;
-    text-align: center;
-    background: rgb(216, 216, 216);
-}
+        flex-wrap: wrap;
+    }
 
-.wr2button2 {
-    width: 80px;
-    border-radius: 10px;
-    border: none;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-}
+    .wr1h1 {
+        cursor: default;
+    }
 
-.wr2label {
-    margin-left: 70px;
-}
+    .wr1content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
 
-.wrapper3 {
-    border: 2px solid rgb(58, 56, 56);
-    background: rgb(48, 48, 48);
-    width: 700px;
-    font-family: "PT Serif", serif;
-    font-weight: bold;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    /* blur background behind */
-    -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
-    border-radius: 12px;
-    /* optional */
-    padding: 1rem;
-    flex-wrap: wrap;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+    .wr1input {
+        text-align: center;
+        border-end-end-radius: 20px;
+        border-end-start-radius: 20px;
+        border-start-end-radius: 15px;
+        border-start-start-radius: 15px;
+        background: rgb(216, 216, 216);
+        border: none;
+        margin-left: 50px;
+        cursor: default;
+    }
 
-.wr3content2 {
-    flex-wrap: wrap;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    margin-top: 1vh;
-    /* Responsive vertical spacing */
-    cursor: default;
-}
 
-.wr3content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 2vh;
-    flex-wrap: wrap;
-    /* Responsive vertical spacing */
-}
 
-.wr3h1 {
-    height: fit-content;
-    cursor: default;
-}
+    .wr1button {
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background: grey;
+        font-weight: bold;
+        color: rgb(216, 216, 216);
+        width: 100px;
+    }
 
-.wr3content3 {
-    margin-top: 3vh;
-}
+    .wr1label {
+        margin-right: 50px;
+    }
 
-.wr3button1,
-.wr3button2,
-.wr3button3 {
-    width: fit-content;
-    border-radius: 12px;
-    border: none;
-    margin-top: 2vh;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-    padding: 0.4rem;
-}
+    .wrapper2 {
+        border: 2px solid rgb(58, 56, 56);
+        background: rgb(48, 48, 48);
+        width: 700px;
+        font-family: "PT Serif", serif;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        /* blur background behind */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+        border-radius: 12px;
+        /* optional */
+        padding: 1rem;
+        flex-wrap: wrap;
+        z-index: 9999;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
 
-.wr3content4 {
-    padding-top: 3vh;
-    padding-left: 7vw;
+    .wr2content {
+        /* display: grid;
+        grid-template-columns: repeat(3, 1fr); */
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
 
-}
+    .wr2button1 {
+        width: 100px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        background: grey;
+        color: rgb(216, 216, 216);
+        font: bold;
+    }
 
-.wr3button5 {
-    margin-left: 0.1vw;
-    width: fit-content;
-    border-radius: 12px;
-    border: none;
-    margin-top: 2vh;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-    padding: 0.4rem;
-}
+    .wr2input {
+        text-align: center;
+        border: none;
+        border-end-end-radius: 20px;
+        border-end-start-radius: 20px;
+        border-start-end-radius: 15px;
+        border-start-start-radius: 15px;
+        height: 20px;
+        cursor: default;
+        text-align: center;
+        background: rgb(216, 216, 216);
+    }
 
-.wr3button4 {
-    width: fit-content;
-    border-radius: 12px;
-    border: none;
-    margin-top: 2vh;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-    padding: 0.4rem;
-}
+    .wr2button2 {
+        width: 80px;
+        border-radius: 10px;
+        border: none;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+    }
 
-.wr3p {
-    cursor: default;
-}
+    .wr2label {
+        margin-left: 70px;
+    }
 
-.wr3h3 {
-    margin-top: 3vh;
-    margin-right: 4.8vw;
-}
+    .wrapper3 {
+        border: 2px solid rgb(58, 56, 56);
+        background: rgb(48, 48, 48);
+        width: 700px;
+        font-family: "PT Serif", serif;
+        font-weight: bold;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        /* blur background behind */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+        border-radius: 12px;
+        /* optional */
+        padding: 1rem;
+        flex-wrap: wrap;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-.wrapper4 {
-    border: 2px solid rgb(58, 56, 56);
-    background: rgb(48, 48, 48);
-    width: 700px;
-    font-family: "PT Serif", serif;
-    font-weight: bold;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    /* blur background behind */
-    -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
-    border-radius: 12px;
-    /* optional */
-    padding: 1rem;
-    flex-wrap: wrap;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+    .wr3content2 {
+        flex-wrap: wrap;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        margin-top: 1vh;
+        /* Responsive vertical spacing */
+        cursor: default;
+    }
 
-.wr4innercontent {
-    margin-top: 4vh;
-    display: flex;
-    padding: 0;
-}
+    .wr3content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 2vh;
+        flex-wrap: wrap;
+        /* Responsive vertical spacing */
+    }
 
-.help {
-    margin-left: 2vw;
-    width: 14vw;
-}
+    .wr3h1 {
+        height: fit-content;
+        cursor: default;
+    }
 
-.wr4c1button {
-    margin-left: 0.1vw;
-    width: fit-content;
-    border-radius: 12px;
-    border: none;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-    padding: 0.4rem 2vw;
-}
+    .wr3content3 {
+        margin-top: 3vh;
+    }
 
-.wr4c1button2 {
-    margin-left: 0.1vw;
-    width: fit-content;
-    border-radius: 12px;
-    border: none;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-    padding: 0.4rem 2vw;
-}
+    .wr3button1,
+    .wr3button2,
+    .wr3button3 {
+        width: fit-content;
+        border-radius: 12px;
+        border: none;
+        margin-top: 2vh;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+        padding: 0.4rem;
+    }
 
-.wr4c1button3 {
-    margin-left: 0.1vw;
-    width: fit-content;
-    border-radius: 12px;
-    border: none;
-    background: grey;
-    cursor: pointer;
-    color: rgb(216, 216, 216);
-    font: bold;
-    padding: 0.4rem 2vw;
-}
+    .wr3content4 {
+        padding-top: 3vh;
+        padding-left: 7vw;
 
-.wr4c1p1,
-.wr4c1p2,
-.wr4c1p3 {
-    cursor: default;
-}
+    }
 
-.wr4h1 {
-    cursor: default;
-}
+    .wr3button5 {
+        margin-left: 0.1vw;
+        width: fit-content;
+        border-radius: 12px;
+        border: none;
+        margin-top: 2vh;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+        padding: 0.4rem;
+    }
 
-.wrapper5 {
-    border: 2px solid rgb(58, 56, 56);
-    background: rgb(48, 48, 48);
-    width: 700px;
-    font-family: "PT Serif", serif;
-    font-weight: bold;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    /* blur background behind */
-    -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
-    border-radius: 12px;
-    /* optional */
-    padding: 1rem;
-    flex-wrap: wrap;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+    .wr3button4 {
+        width: fit-content;
+        border-radius: 12px;
+        border: none;
+        margin-top: 2vh;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+        padding: 0.4rem;
+    }
 
-.wr5mainc {
-    margin-top: 2vh;
-}
+    .wr3p {
+        cursor: default;
+    }
+
+    .wr3h3 {
+        margin-top: 3vh;
+        margin-right: 4.8vw;
+    }
+
+    .wrapper4 {
+        border: 2px solid rgb(58, 56, 56);
+        background: rgb(48, 48, 48);
+        width: 700px;
+        font-family: "PT Serif", serif;
+        font-weight: bold;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        /* blur background behind */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+        border-radius: 12px;
+        /* optional */
+        padding: 1rem;
+        flex-wrap: wrap;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .wr4innercontent {
+        margin-top: 4vh;
+        display: flex;
+        padding: 0;
+    }
+
+    .help {
+        margin-left: 2vw;
+        width: 14vw;
+    }
+
+    .wr4c1button {
+        margin-left: 0.1vw;
+        width: fit-content;
+        border-radius: 12px;
+        border: none;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+        padding: 0.4rem 2vw;
+    }
+
+    .wr4c1button2 {
+        margin-left: 0.1vw;
+        width: fit-content;
+        border-radius: 12px;
+        border: none;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+        padding: 0.4rem 2vw;
+    }
+
+    .wr4c1button3 {
+        margin-left: 0.1vw;
+        width: fit-content;
+        border-radius: 12px;
+        border: none;
+        background: grey;
+        cursor: pointer;
+        color: rgb(216, 216, 216);
+        font: bold;
+        padding: 0.4rem 2vw;
+    }
+
+    .wr4c1p1,
+    .wr4c1p2,
+    .wr4c1p3 {
+        cursor: default;
+    }
+
+    .wr4h1 {
+        cursor: default;
+    }
+
+    .wrapper5 {
+        border: 2px solid rgb(58, 56, 56);
+        background: rgb(48, 48, 48);
+        width: 700px;
+        font-family: "PT Serif", serif;
+        font-weight: bold;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        /* blur background behind */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+        border-radius: 12px;
+        /* optional */
+        cursor: default;
+        padding: 1rem;
+        flex-wrap: wrap;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .wr5mainc {
+        margin-top: 2vh;
+    }
