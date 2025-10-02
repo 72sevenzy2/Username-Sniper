@@ -1,13 +1,11 @@
 // server.js
 import express from "express";
-import fetch from "node-fetch"; // install with: npm install node-fetch
+import fetch from "node-fetch";
 
 const app = express();
 
-// Serve frontend files from "public" folder
 app.use(express.static("public"));
 
-// Endpoint to check Roblox username availability
 app.get("/check", async (req, res) => {
   const username = req.query.username;
 
@@ -16,14 +14,13 @@ app.get("/check", async (req, res) => {
   }
 
   try {
-    // Roblox API endpoint
+    // api endpoint for roblox
     const response = await fetch(
       `https://auth.roblox.com/v1/usernames/validate?request.username=${username}&request.birthday=2000-01-01&request.context=Signup`
     );
 
     const data = await response.json();
 
-    // Roblox returns a field 'code' — if 0, it's available
     if (data.code === 0) {
       res.json({ taken: false, message: "Available!" });
     } else {
@@ -35,6 +32,5 @@ app.get("/check", async (req, res) => {
   }
 });
 
-// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

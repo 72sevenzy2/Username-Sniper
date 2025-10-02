@@ -54,7 +54,6 @@ html body {
   width: 0.1px;
 }
 
-/* --- styles for the wrappers--- */
 .wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5 {
   border: 2px solid rgba(255, 255, 255, 0.1);
   background: rgba(48, 48, 48, 0.3);
@@ -76,17 +75,19 @@ html body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Headings */
 .wrapper1 h1,
 .wrapper2 h1,
 .wrapper3 h1,
 .wrapper4 h1,
 .wrapper5 h1 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
 }
 
-/* --- INPUTS & BUTTONS --- */
+.wr1h1 {
+  margin-bottom: 0.1rem;
+}
+
 input[type="text"] {
   padding: 0.6rem 1rem;
   border-radius: 10px;
@@ -118,7 +119,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* --- WRAPPER 1 --- */
 .wr1content {
   display: flex;
   gap: 1rem;
@@ -127,7 +127,6 @@ button:disabled {
   flex-wrap: wrap;
 }
 
-/* --- WRAPPER 2 --- */
 .wr2content {
   display: flex;
   gap: 1rem;
@@ -136,7 +135,6 @@ button:disabled {
   align-items: center;
 }
 
-/* --- WRAPPER 3 --- */
 .wr3content {
   display: flex;
   flex-direction: column;
@@ -153,15 +151,20 @@ button:disabled {
   gap: 0.8rem;
 }
 
-/* --- WRAPPER 4 --- */
 .wr4innercontent {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
-/* --- WRAPPER 5 --- */
+.wr4innercontent .help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .wr5mainc {
   display: flex;
   flex-direction: column;
@@ -169,7 +172,6 @@ button:disabled {
   text-align: left;
 }
 
-/* --- MEDIA QUERIES FOR SMALL SCREENS --- */
 @media (max-width: 600px) {
   html body {
     padding: 1.5rem 1rem;
@@ -182,7 +184,7 @@ button:disabled {
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 1.6rem;
   }
 
   button, input[type="text"] {

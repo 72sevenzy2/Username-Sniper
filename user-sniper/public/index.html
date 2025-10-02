@@ -18,44 +18,6 @@
 <body>
   <!-- <script type="module" src="animation.js"></script> -->
   <!-- ^^ archived this but will be kept if needed in the future perhaps -->
-  <script type="module" src="index.js"></script>
-  <script>
-    (function () {
-      let scrollTarget = window.scrollY;
-      let isScrolling = false;
-
-      // Listen to user scroll
-      window.addEventListener("wheel", e => {
-        e.preventDefault(); // stop the default jumpy scroll
-
-        // adjust scroll target
-        scrollTarget += e.deltaY;
-
-        // clamp to page bounds
-        scrollTarget = Math.max(0, Math.min(scrollTarget, document.body.scrollHeight - window.innerHeight));
-
-        if (!isScrolling) {
-          isScrolling = true;
-          requestAnimationFrame(smoothStep);
-        }
-      }, { passive: false });
-
-      function smoothStep() {
-        const current = window.scrollY;
-        const distance = scrollTarget - current;
-
-        // ease toward target
-        const step = distance * 0.1; // smaller factor = slower scrolling
-        if (Math.abs(distance) > 0.5) {
-          window.scrollTo(0, current + step);
-          requestAnimationFrame(smoothStep);
-        } else {
-          window.scrollTo(0, scrollTarget);
-          isScrolling = false;
-        }
-      }
-    })();
-  </script>
 
   <div id="animationContainer">
     <canvas id="particleCanvas"></canvas>
@@ -66,7 +28,6 @@
 
   <div class="wrapper1">
     <h1 class="wr1h1">Pain's Roblox Username Sniper</h1>
-    <br>
     <div class="wr1content">
       <input type="text" placeholder="Enter Username" class="wr1input" id="wr1input">
       <button class="wr1button" id="wr1button">Check</button>
@@ -121,29 +82,6 @@
           <p class="wr4c1p3" id="wr4c1p3">Template</p>
           <button class="wr4c1button3" id="buttonclass3">copy</button>
         </div>
-        <script>
-          const btn1 = document.getElementById("buttonclass");
-          const btn2 = document.getElementById("buttonclass2");
-          const btn3 = document.getElementById("buttonclass3");
-          const p = document.querySelector(".wr4c1p1").innerText;
-          const p2 = document.querySelector(".wr4c1p2").innerText;
-          const p3 = document.querySelector(".wr4c1p3").innerText;
-          btn1.addEventListener("click", () => {
-            navigator.clipboard.writeText(p).then(() => {
-              window.alert(`copied ${p}`);
-            });
-          });
-          btn2.addEventListener("click", () => {
-            navigator.clipboard.writeText(p2).then(() => {
-              window.alert(`copied ${p2}`);
-            });
-          });
-          btn3.addEventListener("click", () => {
-            navigator.clipboard.writeText(p3).then(() => {
-              window.alert(`copied ${p3}`);
-            });
-          });
-        </script>
       </div>
     </div>
   </div>
@@ -160,6 +98,40 @@
       </div>
     </div>
   </div>
+
+  <script type="module" src="index.js"></script>
+
+  <script>
+    (function () {
+      let scrollTarget = window.scrollY;
+      let isScrolling = false;
+      window.addEventListener("wheel", e => {
+        e.preventDefault();
+
+        scrollTarget += e.deltaY;
+
+        scrollTarget = Math.max(0, Math.min(scrollTarget, document.body.scrollHeight - window.innerHeight));
+
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(smoothStep);
+        }
+      }, { passive: false });
+
+      function smoothStep() {
+        const current = window.scrollY;
+        const distance = scrollTarget - current;
+        const step = distance * 0.2;
+        if (Math.abs(distance) > 0.5) {
+          window.scrollTo(0, current + step);
+          requestAnimationFrame(smoothStep);
+        } else {
+          window.scrollTo(0, scrollTarget);
+          isScrolling = false;
+        }
+      }
+    })();
+  </script>
 
 </body>
 

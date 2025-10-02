@@ -8,8 +8,6 @@ window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
-
-// Ball class
 class Ball {
     constructor(x, y, radius, color, vx, vy) {
         this.x = x;
@@ -32,7 +30,6 @@ class Ball {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Bounce off walls
         if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) {
             this.vx *= -1;
         }
@@ -44,11 +41,8 @@ class Ball {
     }
 }
 
-// Create 2 balls
 const ball1 = new Ball(300, 390, 100, "white", 3, 2);
 const ball2 = new Ball(200, 200, 100, "white", 2, 5);
-
-// Animation loop
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
