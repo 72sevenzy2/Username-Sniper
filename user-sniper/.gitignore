@@ -1,3 +1,4 @@
 # hiding all sensitive files
 
-server
+node_modules/
+user-sniper/server.js
